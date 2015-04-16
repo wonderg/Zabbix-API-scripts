@@ -1,2 +1,2 @@
-# zbx_api_scripts
-Zabbix API scripts
+# Scripts for Zabbix using Zabbix API
+Scripts using Zabbix API 
