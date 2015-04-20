@@ -17,7 +17,7 @@ zapass = 'password'
 #DATA = []
 PATH = 'list.txt'
 
-link2script = '/home/mak/pyzbx/zbx_add_host.py'
+link2script = '/home/zbx-srv-device-add.py' # lint to server scipt
 
 #  Main definition - constants
 menu_actions = {}
