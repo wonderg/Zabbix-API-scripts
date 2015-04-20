@@ -115,9 +115,6 @@ def manual_device_add():
         exec_menu('1')
     return DICT
 
-#DICT = {'template': '10115', 'name': 'Марату 47 Я покупаю СПБ1 RG-2402G', 'host': 'Marata 47 Ja pokupaju SPB1 RG-2402G',
-#        'ip': '192.168.12.38', 'group': '53', 'dev_type': 'SIPGateway', 'macadd': '5C:50:15:42:E6:40'}
-
 # Menu 2
 def list_device_add():
     print("[Добавление устройств по списку]\n")
