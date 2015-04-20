@@ -9,15 +9,15 @@ import paramiko
 import re
 
 
-zaurl = '192.168.1.1' # SSH password to Zabbix-server 
-zauser = 'user' #SSH user
-zapass = 'password' #SSH password
+zaurl = '10.17.100.73'
+zauser = 'mak'
+zapass = 'Secret2012!'
 
 #FORM = ['host', 'name', 'ip', 'group', 'template', 'dev_type', 'macadd']
 #DATA = []
 PATH = 'list.txt'
 
-link2script = '/home/user/zbx-srv-device-add.py'
+link2script = '/home/mak/pyzbx/zbx_add_host.py'
 
 #  Main definition - constants
 menu_actions = {}
@@ -94,7 +94,7 @@ def manual_device_add():
     print('Тип девайса: ' + DICT['dev_type'] + '\n')
     print('MAC-адрес: ' + DICT['macadd'] + '\n')
     print('\n')
-    print("Всё корректно?\n 1. Да\n 2. Нет\n")
+    print("Всё корректно?\n 1. Да\n 2. Нет\n 3. Вернуться в предыдущее меню\n")
     check = input(" >>  ")
     if check == "1":
         cmd = 'python ' + link2script + ' ' + ' --host \"' + DICT['host'] + '\" --name \"' + DICT['name'] + \
@@ -109,10 +109,14 @@ def manual_device_add():
         print("0. Выход")
         choice = input(" >>  ")
         exec_menu(choice)
+    elif check == '3':
+        exec_menu('main_menu')
     else:
         exec_menu('1')
     return DICT
 
+#DICT = {'template': '10115', 'name': 'Марату 47 Я покупаю СПБ1 RG-2402G', 'host': 'Marata 47 Ja pokupaju SPB1 RG-2402G',
+#        'ip': '192.168.12.38', 'group': '53', 'dev_type': 'SIPGateway', 'macadd': '5C:50:15:42:E6:40'}
 
 # Menu 2
 def list_device_add():
